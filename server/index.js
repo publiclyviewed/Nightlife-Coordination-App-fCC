@@ -5,6 +5,7 @@
     const mongoose = require('mongoose');
     const session = require('express-session'); // Import express-session
     const passport = require('./config/passport'); // Import passport config
+    const barRoutes = require('./routes/barRoutes');
 
     // Load environment variables
     dotenv.config();
@@ -63,6 +64,8 @@ app.get('/', (req, res) => {
 
 
 app.use('/api/auth', authRoutes);
+
+app.use('/api/bars', barRoutes);
 
 
 // Start the server
