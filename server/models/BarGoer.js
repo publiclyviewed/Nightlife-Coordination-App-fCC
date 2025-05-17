@@ -6,14 +6,14 @@ const BarGoerSchema = new mongoose.Schema({
     type: String,
     required: true,
     trim: true,
-    // We might want an index here for faster lookup by yelpId
+    // Index for faster lookup by yelpId
     index: true
   },
   userId: {
     type: mongoose.Schema.Types.ObjectId, // Reference to the User model
     ref: 'User', // Specifies that this ObjectId refers to the 'User' model
     required: true,
-    // We might want an index here too, especially a compound index with yelpId
+    // Index for faster lookup by userId
     index: true
   },
   // Optional: timestamp for when the user added themselves
@@ -24,6 +24,7 @@ const BarGoerSchema = new mongoose.Schema({
 });
 
 // Add a compound index to ensure a user can only be listed once per bar
+// This index ensures the combination of yelpId and userId is unique
 BarGoerSchema.index({ yelpId: 1, userId: 1 }, { unique: true });
 
 
