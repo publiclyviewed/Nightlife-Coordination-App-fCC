@@ -10,6 +10,7 @@ import LogoutButton from '../components/LogoutButton';
 
 // Import bar components (assuming they are in src/components/)
 import BarList from '../components/BarList'; // Import BarList
+import './App.css';
 
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000';

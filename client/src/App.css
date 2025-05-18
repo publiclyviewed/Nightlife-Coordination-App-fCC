@@ -1,42 +1,127 @@
-#root {
-  max-width: 1280px;
+/* client/src/App.css */
+body {
+  font-family: sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 20px;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+.App {
+  max-width: 800px;
   margin: 0 auto;
-  padding: 2rem;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+  color: #0056b3; /* Example brand color */
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+hr {
+  margin: 20px 0;
+  border: none;
+  border-top: 1px solid #eee;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+form div {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: calc(100% - 22px); /* Adjust width accounting for padding/border */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+button {
+    background-color: #007bff; /* Primary button color */
+         color: white;
+padding: 10px 15px;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+font-size: 1em;
+transition: background-color 0.3s ease;
+}
+
+button:hover:not(:disabled) {
+    background-color: #0056b3;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Style for the BarItem component - these will override inline styles */
+.bar-item {
+    border: 1px solid #ddd;
+    margin: 15px 0;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.bar-item-content {
+    flex-grow: 1;
+    margin-right: 20px;
+    min-width: 200px; /* Ensure content takes up space */
+}
+
+.bar-item-image img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-right: 20px; /* Space between image and interaction */
+}
+
+ .bar-item-interaction {
+     text-align: center;
+     min-width: 80px; /* Ensure interaction area has minimum width */
+ }
+
+ .bar-item-interaction p {
+     margin: 5px 0; /* Adjust vertical spacing */
+ }
+
+ .bar-item-interaction button {
+     /* Specific button styles for go/notgo */
+     padding: 8px 15px;
+     font-size: 0.9em;
+ }
+
+ .error-message {
+     color: red;
+     margin-top: 10px;
+     font-weight: bold;
+ }
+
+  .success-message {
+      color: green;
+      margin-top: 10px;
+      font-weight: bold;
   }
-  to {
-    transform: rotate(360deg);
+
+  .loading-message {
+      font-style: italic;
+      color: #555;
   }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
