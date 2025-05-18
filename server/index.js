@@ -21,7 +21,7 @@ const PORT = process.env.PORT || 5000;
 // CORS: Configure to allow requests from your frontend origin with credentials
 // IMPORTANT: Replace 'YOUR_FRONTEND_PRODUCTION_URL' with your actual Netlify/Vercel URL when deploying
 app.use(cors({
-  origin: process.env.NODE_ENV === 'production' ? 'YOUR_FRONTEND_PRODUCTION_URL' : 'http://localhost:5173',
+  origin: process.env.NODE_ENV === 'production' ? 'process.env.FRONTEND_URL' : 'http://localhost:5173',
   credentials: true // This is crucial for sending cookies/sessions
 }));
 
